@@ -5,7 +5,6 @@
 # Copyright 2021 Angel Uniminin <uniminin@zoho.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user=derf tag=v${PV} ]
 require freedesktop-desktop gtk-icon-cache
 
 SUMMARY="A fast and light image viewer"
@@ -13,11 +12,14 @@ DESCRIPTION="
 feh is an X11 image viewer aimed mostly at console users. Unlike most other viewers, it does not have a fancy GUI, but simply displays images. It is controlled via commandline arguments and configurable key/mouse actions.
 "
 HOMEPAGE="https://github.com/derf/feh"
-UPSTREAM_DOCUMENTATION="https://github.com/derf/feh/blob/master/man/feh.pre"
-UPSTREAM_CHANGELOG="https://github.com/derf/feh/blob/master/ChangeLog"
+DOWNLOADS="${HOMEPAGE}/releases/tag/${PNV}"
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/master/man/feh.pre"
+UPSTREAM_CHANGELOG="${HOMEPAGE}/feh/blob/master/ChangeLog"
 
 LICENCES="MIT"
 SLOT="0"
+
+BUGS_TO="uniminin@zoho.com"
 
 MYOPTIONS="
     curl  [[ description = [ Adds support for client-side URL transfer library ] ]]
