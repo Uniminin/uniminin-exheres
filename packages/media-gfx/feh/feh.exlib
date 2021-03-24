@@ -14,6 +14,7 @@ MYOPTIONS="
     exif  [[ description = [ Add support for reading EXIF headers from JPEG and TIFF images ] ]]
     inotify  [[ description = [ Enable inotify filesystem monitoring support ] ]]
     xinerama  [[ description = [ Add support for querying multi-monitor screen geometry through the Xinerama API  ] ]]
+    imagemagick [[ description = [ Add support suite to manipulate a variety of image formats ] ]]
 "
 
 DEPENDENCIES="
@@ -31,6 +32,10 @@ DEPENDENCIES="
         )
         xinerama? (
             x11-libs/libXinerama
+        )
+    run:
+        imagemagick? (
+            media-gfx/imagemagick
         )
 "
 
