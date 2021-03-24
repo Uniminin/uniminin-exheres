@@ -41,9 +41,12 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    !xinerama (
-        edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
-                -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" -i config.mk
+    edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
+            -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" -i config.mk
+
+    xinerama? (
+        edo sed -e "s/#XINERAMALIBS/XINERAMALIBS/g" \
+                -e "s/#XINERAMAFLAGS/XINERAMAFLAGS/g" -i config.mk
     )
 
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
