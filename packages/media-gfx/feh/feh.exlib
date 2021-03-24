@@ -23,14 +23,14 @@ DEPENDENCIES="
         media-libs/imlib2[X]
         media-libs/libpng
         x11-libs/libX11
-        curl? ( 
+        curl? (
             net-misc/curl
         )
-        exif? ( 
-            media-libs/libexif 
+        exif? (
+            media-libs/libexif
         )
-        xinerama? ( 
-            x11-libs/libXinerama 
+        xinerama? (
+            x11-libs/libXinerama
         )
 "
 
@@ -43,7 +43,7 @@ DEFAULT_SRC_INSTALL_PARAMS=(
 )
 
 state() { 
-    echo ${1}=$(option ${1} 1 0) 
+    echo ${1}=$(option ${1} 1 0)
 }
 
 src_compile() {
