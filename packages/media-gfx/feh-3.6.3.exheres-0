@@ -1,0 +1,6 @@
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require feh
+
+PLATFORMS="~amd64 ~x86"

@@ -10,8 +10,7 @@ LICENCES="MPL-2.0 MIT"
 SLOT="0"
 
 MYOPTIONS="
-    xinerama   [[ description = [ Add support for querying multi-monitor screen geometry through the Xinerama API  ] ]]
-    opengl     [[ description = [ Add support for opengl backend and opengl vsync methods ] ]]
+    opengl  [[ description = [ Add support for opengl backend and opengl vsync methods ] ]]
 "
 
 DEPENDENCIES="
@@ -31,9 +30,6 @@ DEPENDENCIES="
         x11-libs/libxdg-basedir
         x11-utils/xcb-util-renderutil
         x11-utils/xcb-util-image
-        xinerama? (
-            x11-libs/libXinerama
-        )
         opengl? (
             x11-dri/libdrm
             x11-dri/mesa
@@ -42,6 +38,8 @@ DEPENDENCIES="
         x11-apps/xprop
         x11-apps/xwininfo
 "
+
+RESTRICT="test"
 
 MESON_SRC_CONFIGURE_PARAMS=(
     "-Ddbus=false"
