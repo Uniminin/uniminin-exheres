@@ -5,17 +5,19 @@
 
 require meson gtk-icon-cache
 
-SUMMARY="A lightweight compositor for X11"
+SUMMARY="A lightweight compositor for X Window System"
 DESCRIPTION="
 picom is a standalone compositor for Xorg, suitable for use with window managers that do not provide compositing. picom is a fork of compton, which is a fork of xcompmgr-dana, which in turn is a fork of xcompmgr.
 "
 
+GHOST="github"
+GDOM="com"
 GUSER="yshui"
-HOMEPAGE="https://github.com/${GUSER}/${PN}"
+HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
 DOWNLOADS="${HOMEPAGE}/archive/refs/tags/${PV}.tar.gz"
 
-UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/next/man/picom.1.asciidoc"
-UPSTREAM_CHANGELOG="${HOMEPAGE}/picom/releases"
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/next/man/${PN}.1.asciidoc"
+UPSTREAM_CHANGELOG="${HOMEPAGE}/${PN}/releases"
 
 LICENCES="MPL-2.0 MIT"
 SLOT="0"

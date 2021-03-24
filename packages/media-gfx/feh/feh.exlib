@@ -12,8 +12,10 @@ DESCRIPTION="
 feh is an X11 image viewer aimed mostly at console users. Unlike most other viewers, it does not have a fancy GUI, but simply displays images. It is controlled via commandline arguments and configurable key/mouse actions.
 "
 
+GHOST="github"
+GDOM="com"
 GUSER="derf"
-HOMEPAGE="https://github.com/${GUSER}/${PN}"
+HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
 DOWNLOADS="${HOMEPAGE}/archive/refs/tags/${PV}.tar.gz"
 
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/master/man/${PN}.pre"

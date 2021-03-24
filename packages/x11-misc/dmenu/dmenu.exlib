@@ -1,0 +1,57 @@
+# Copyright 2008 Gaute Hope <eg@gaute.vetsj.com>
+# Copyright 2010 Markus Rothe
+# Copyright 2012 Paul Seidler
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A highly customizable and efficient menu for the X Window System"
+DESCRIPTION="
+dmenu is a dynamic menu for X, originally designed for dwm. It manages large numbers of user-defined menu items efficiently.
+"
+
+OFFICIAL_DOMAIN="suckless.org"
+OFFICIAL_DOMAIN_MISC="tools"
+HOMEPAGE="https://${OFFICIAL_DOMAIN_MISC}.${OFFICIAL_DOMAIN}/${PN}"
+DOWNLOADS="https://dl.${OFFICIAL_DOMAIN}/${OFFICIAL_DOMAIN_MISC}/${PNV}.tar.gz"
+
+UPSTREAM_DOCUMENTATION="https://git.${OFFICIAL_DOMAIN}/${PN}/file/${PN}.1.html"
+UPSTREAM_CHANGELOG="https://git.${OFFICIAL_DOMAIN}/${PN}/log.html"
+
+LICENCES="MIT"
+SLOT="0"
+
+BUGS_TO="uniminin@zoho.com"
+
+MYOPTIONS="
+    xinerama  [[ description = [ Adds support for querying multi-monitor screen geometry through the Xinerama API  ] ]]
+"
+
+DEPENDENCIES="
+    build:
+        virtual/pkg-config
+        x11-proto/xorgproto
+    build+run:
+        media-libs/fontconfig
+        media-libs/freetype:2
+        x11-libs/libX11
+        x11-libs/libXft
+        xinerama? (
+            x11-libs/libXinerama
+        )
+"
+
+src_prepare() {
+    !xinerama (
+        edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
+                -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" -i config.mk
+    )
+
+    edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
+            -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
+            -e "s:X11INC = /usr/X11R6/include:X11INC = /usr/$(exhost --target)/include:" \
+            -e "s:X11LIB = /usr/X11R6/lib:X11LIB = /usr/$(exhost --target)/lib:" \
+            -e "s:CC = cc:CC = $(exhost --target)-cc:" \
+            \
+            -e "/^CFLAGS/{s|=|+=|;s|-Os||g}" \
+            -e "/^LDFLAGS/{s|=|+=|;s|-s||g}" -i config.mk
+}
