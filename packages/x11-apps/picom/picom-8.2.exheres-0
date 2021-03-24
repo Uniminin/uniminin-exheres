@@ -1,0 +1,68 @@
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require github [ user=yshui tag=v${PV} ]
+require meson gtk-icon-cache
+
+SUMMARY="A lightweight compositor for X11"
+HOMEPAGE="https://github.com/yshui/picom"
+LICENCES="MPL-2.0 MIT"
+SLOT="0"
+PLATFORMS="~amd64 ~x86"
+
+MYOPTIONS="
+    xinerama   [[ description = [ Add support for querying multi-monitor screen geometry through the Xinerama API  ] ]]
+    opengl     [[ description = [ Add support for opengl backend and opengl vsync methods ] ]]
+"
+
+DEPENDENCIES="
+    build:
+        virtual/pkg-config
+        app-doc/asciidoc
+        dev-libs/uthash
+        x11-proto/xorgproto
+    build+run:
+        dev-libs/libconfig
+        dev-libs/libev
+        dev-libs/pcre
+        x11-libs/libX11
+        x11-libs/libxcbE
+        x11-libs/libXext
+        x11-libs/pixman:1
+        x11-libs/libxdg-basedir
+        x11-utils/xcb-util-renderutil
+        x11-utils/xcb-util-image
+        xinerama? (
+            x11-libs/libXinerama
+        )
+        opengl? (
+            x11-dri/libdrm
+            x11-dri/mesa
+        )
+    run:
+        x11-apps/xprop
+        x11-apps/xwininfo
+"
+
+MESON_SRC_CONFIGURE_PARAMS=(
+    "-Ddbus=false"
+)
+
+MESON_SRC_CONFIGURE_OPTION_SWITCHES=(
+    "opengl"
+)
+
+src_prepare() {
+    meson_src_prepare
+
+    # Broken Script
+    printf "%s\n" "#!/bin/sh" > meson/install.sh
+}
+
+src_install() {
+    meson_src_install
+}
+
+pkg_postinst() {
+    gtk-icon-cache_pkg_postinst
+}
