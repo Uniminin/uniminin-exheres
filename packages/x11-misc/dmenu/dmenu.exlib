@@ -41,8 +41,8 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    TODO: Handle Properly [!-xinerama]
-    edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
+    ### TODO: Handle Properly [!-xinerama]
+    # edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
         -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
         -i config.mk
 
