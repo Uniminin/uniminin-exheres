@@ -3,14 +3,17 @@
 # Copyright 2021 Angel Uniminin <uniminin@zoho.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user=yshui tag=v${PV} ]
 require meson gtk-icon-cache
 
 SUMMARY="A lightweight compositor for X11"
 DESCRIPTION="
 picom is a standalone compositor for Xorg, suitable for use with window managers that do not provide compositing. picom is a fork of compton, which is a fork of xcompmgr-dana, which in turn is a fork of xcompmgr.
 "
-HOMEPAGE="https://github.com/yshui/picom"
+
+GUSER="yshui"
+HOMEPAGE="https://github.com/${GUSER}/${PN}"
+DOWNLOADS="${HOMEPAGE}/archive/refs/tags/${PV}.tar.gz"
+
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/next/man/picom.1.asciidoc"
 UPSTREAM_CHANGELOG="${HOMEPAGE}/picom/releases"
 
