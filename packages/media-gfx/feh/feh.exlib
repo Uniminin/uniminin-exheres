@@ -10,11 +10,11 @@ DOWNLOADS="${HOMEPAGE}/${PNV}.tar.bz2"
 LICENCES="feh"
 SLOT="0"
 MYOPTIONS="
-    curl  [[ description = [ Add support for client-side URL transfer library ] ]]
-    exif  [[ description = [ Add support for reading EXIF headers from JPEG and TIFF images ] ]]
-    inotify  [[ description = [ Enable inotify filesystem monitoring support ] ]]
-    xinerama  [[ description = [ Add support for querying multi-monitor screen geometry through the Xinerama API  ] ]]
-    imagemagick [[ description = [ Add support suite to manipulate a variety of image formats ] ]]
+    curl  [[ description = [ Adds support for client-side URL transfer library ] ]]
+    exif  [[ description = [ Adds support for reading EXIF headers from JPEG and TIFF images ] ]]
+    inotify  [[ description = [ Enables inotify filesystem monitoring support ] ]]
+    xinerama  [[ description = [ Adds support for querying multi-monitor screen geometry through the Xinerama API  ] ]]
+    imagemagick [[ description = [ Adds support suite to manipulate a variety of image formats ] ]]
 "
 
 DEPENDENCIES="

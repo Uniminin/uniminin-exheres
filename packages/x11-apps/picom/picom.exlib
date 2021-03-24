@@ -10,7 +10,7 @@ LICENCES="MPL-2.0 MIT"
 SLOT="0"
 
 MYOPTIONS="
-    opengl  [[ description = [ Add support for opengl backend and opengl vsync methods ] ]]
+    opengl  [[ description = [ Adds support for opengl backend and opengl vsync methods ] ]]
 "
 
 DEPENDENCIES="
