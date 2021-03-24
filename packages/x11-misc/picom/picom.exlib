@@ -14,7 +14,7 @@ GHOST="github"
 GDOM="com"
 GUSER="yshui"
 HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
-DOWNLOADS="${HOMEPAGE}/archive/refs/tags/${PV}.tar.gz"
+DOWNLOADS="${HOMEPAGE}/archive/refs/tags/v${PV}.tar.gz"
 
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/next/man/${PN}.1.asciidoc"
 UPSTREAM_CHANGELOG="${HOMEPAGE}/${PN}/releases"
