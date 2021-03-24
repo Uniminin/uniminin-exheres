@@ -37,17 +37,14 @@ DEPENDENCIES="
         x11-libs/libXft
         xinerama? (
             x11-libs/libXinerama
+            XINERAMA=1
         )
 "
 
 src_prepare() {
-    edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
-            -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" -i config.mk
-
-    xinerama? (
-        edo sed -e "s/#XINERAMALIBS/XINERAMALIBS/g" \
-                -e "s/#XINERAMAFLAGS/XINERAMAFLAGS/g" -i config.mk
-    )
+    [ ! -z "$XINERAMA" ] || edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
+                               -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
+                               -i config.mk
 
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
             -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
