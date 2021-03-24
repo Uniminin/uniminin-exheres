@@ -8,7 +8,6 @@ SUMMARY="A lightweight compositor for X11"
 HOMEPAGE="https://github.com/yshui/picom"
 LICENCES="MPL-2.0 MIT"
 SLOT="0"
-PLATFORMS="~amd64 ~x86"
 
 MYOPTIONS="
     xinerama   [[ description = [ Add support for querying multi-monitor screen geometry through the Xinerama API  ] ]]

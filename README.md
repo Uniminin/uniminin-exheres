@@ -7,5 +7,6 @@ Edit `/etc/paludis/repositories/uniminin.conf` and include the following:
 format = e
 location = /var/db/paludis/repositories/uniminin
 sync = git+https://github.com/Uniminin/uniminin-exheres.git
+sync_options = --branch=main
 ```
 Then execute `cave sync`, Paludis should then find and update the repository.
