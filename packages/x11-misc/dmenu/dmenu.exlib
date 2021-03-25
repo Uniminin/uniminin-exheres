@@ -45,11 +45,8 @@ src_prepare() {
     #        -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
     #        -i config.mk
 
-    if optionq xinerama ; then
-        echo "XINERAMA ENABLED"
-    else
+    if [ ! optionq xinerama ]; then
         echo "XINERAMA DISABLED"
-    fi
 
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
             -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
