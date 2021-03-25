@@ -62,7 +62,7 @@ DEPENDENCIES="
             )
         ) [[ *requires = X ]]
 
-        doas (
+        doas? (
             app-admin/doas
         )
         zstd? (
