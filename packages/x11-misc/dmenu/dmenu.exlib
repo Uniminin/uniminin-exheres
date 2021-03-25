@@ -46,6 +46,10 @@ src_prepare() {
     #    -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
     #    -i config.mk
 
+    option_enable xinerama (
+        echo hi
+    )
+
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
             -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
             -e "s:X11INC = /usr/X11R6/include:X11INC = /usr/$(exhost --target)/include:" \
