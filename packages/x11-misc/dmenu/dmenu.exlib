@@ -41,11 +41,10 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    if ! optionq xinerama; then
-        edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
-                -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
-                -i config.mk
-    fi
+    [ optionq xinerama ] || edo sed \
+        -e "s:XINERAMALIBS:#XINERAMALIBS:g" \
+        -e "s:XINERAMAFLAGS:#XINERAMAFLAGS:g" \
+        -i config.mk
 
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
             -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
