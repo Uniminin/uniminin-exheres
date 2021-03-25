@@ -30,7 +30,7 @@ MYOPTIONS="
 custom_repo="uniminin"
 
 DEPENDENCIES="
-    run:
+    build+run:
         xrandr? (
             x11-apps/xrandr
         )
