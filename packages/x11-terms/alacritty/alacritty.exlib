@@ -40,6 +40,15 @@ DEPENDENCIES="
     build+run:
         media-libs/fontconfig
         media-libs/freetype
+        bash-completion? (
+            app-shells/bash
+        )
+        zsh-completion? (
+            app-shells/zsh
+        )
+        fish-completion? (
+            app-shells/fish
+        )
         X? (
             x11-dri/mesa[X]
             x11-libs/libXrandr
@@ -63,21 +72,21 @@ ECARGO_FEATURE_ENABLES=(
     "wayland"
 )
 
-BASH_COMPLETIONS=( extra/completions/${PN}.bash )
-ZSH_COMPLETIONS=( extra/completions/_${PN} )
-FISH_COMPLETIONS=( extra/completions/${PN}.fish )
+BASH_COMPLETIONS=( "extra/completions/${PN}.bash" )
+ZSH_COMPLETIONS=( "extra/completions/_${PN}" )
+FISH_COMPLETIONS=( "extra/completions/${PN}.fish" )
 
 alacritty_src_install() {
     edo cd "${ALACRITTY_ROOT}"
-    dobin target/release/${PN}
+    dobin "target/release/${PN}"
 
-    insinto /usr/share/applications
-    doins extra/linux/Alacritty.desktop
+    insinto "/usr/share/applications"
+    doins "extra/linux/Alacritty.desktop"
 
-    insinto /usr/share/pixmaps
-    newins extra/logo/${PN}-term.svg Alacritty.svg
+    insinto "/usr/share/pixmaps"
+    newins "extra/logo/${PN}-term.svg Alacritty.svg"
 
-    ! option man || insinto /usr/share/man/man1 ; newins extra/${PN}.man ${PN}.1
+    ! option man || insinto "/usr/share/man/man1" ; newins "extra/${PN}.man ${PN}.1"
     ! option doc || emagicdocs
 
     ! option bash-completion || zsh-completion_src_install

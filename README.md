@@ -3,7 +3,7 @@ uniminin's paludis exheres for Exherbo Linux providing exheres for various packa
 
 ## Using This Repository
 Edit `/etc/paludis/repositories/uniminin.conf` and include the following:
-```bash
+```r
 format = e
 location = /var/db/paludis/repositories/uniminin
 sync = git+https://github.com/Uniminin/uniminin-exheres.git

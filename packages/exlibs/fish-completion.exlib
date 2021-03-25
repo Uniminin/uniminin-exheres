@@ -1,0 +1,31 @@
+# Copyright 1999-2005 Gentoo Foundation
+# Copyright 2008 David Leverton <dleverton@exherbo.org>
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Based on arbor/exlibs/bash-completion.exlib
+# Distributed under the terms of the GNU General Public License v2
+
+MYOPTIONS="
+    fish-completion [ Installs completion files for the fish shell ] ]]
+"
+
+BUGS_TO="uniminin@zoho.com"
+
+export FISHCOMPLETIONDIR="/usr/share/fish/completions"
+
+dofishcompletion() {
+    illegal_in_global_scope
+
+    [ -z "${1}" ] && die "usage: dofishcompletion <file> [ <installed name> ]"
+
+    ! option fish-completion || insinto "${FISHCOMPLETIONDIR}" ; newins "${1}" "${2:-${PN}.fish}"
+}
+
+fish-completion_src_install() {
+    local c
+
+    for c in "${FISH_COMPLETIONS[@]}"; do
+        dofishcompletion "${c}"
+    done
+}
+
+export_exlib_phases src_install
