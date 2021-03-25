@@ -1,0 +1,65 @@
+# Copyright 2018-2020 Danilo Spinella <danyspin97@protonmail.com>
+# Copyright 2019 Maxime SORIN <maxime.sorin@clever-cloud.com>
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cargo [ rust_minimum_version=1.50.0 ]
+
+export_exlib_phases src_install
+
+SUMMARY="A cross-platform, OpenGL terminal emulator"
+DESCRIPTION="
+Alacritty is a modern cross-platform, OpenGL terminal emulator which allows extensive configuration.
+"
+
+GHOST="github"
+GDOM="com"
+GUSER="${PN}"
+HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
+DOWNLOADS="${HOMEPAGE}/archive/refs/tags/v${PV}.tar.gz"
+
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/tree/master/docs"
+UPSTREAM_CHANGELOG="${HOMEPAGE}/blob/master/CHANGELOG.md"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+
+MYOPTIONS="
+    ( X wayland ) [[ number-selected = at-least-one ]]
+"
+
+DEPENDENCIES="
+    build+run:
+        media-libs/fontconfig
+        media-libs/freetype
+        X? (
+            x11-dri/mesa[X]
+        )
+        wayland? (
+            x11-dri/mesa[wayland]
+        )
+    run:
+        sys-libs/ncurses
+"
+
+BUGS_TO="uniminin@zoho.com"
+
+ALACRITTY_ROOT="${WORK}"
+WORK="${WORK}"/${PN}
+
+ECARGO_FEATURE_ENABLES=(
+    'X x11'
+    'wayland wayland'
+)
+
+alacritty_src_install() {
+    edo cd "${ALACRITTY_ROOT}"
+    dobin target/release/${PN}
+
+    insinto /usr/share/applications
+    doins extra/linux/Alacritty.desktop
+
+    insinto /usr/share/pixmaps
+    newins extra/logo/${PN}-term.svg Alacritty.svg
+}
+

@@ -17,7 +17,7 @@ HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
 DOWNLOADS="${HOMEPAGE}/archive/refs/tags/v${PV}.tar.gz"
 
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/next/man/${PN}.1.asciidoc"
-UPSTREAM_CHANGELOG="${HOMEPAGE}/${PN}/releases"
+UPSTREAM_CHANGELOG="${HOMEPAGE}/releases"
 
 LICENCES="MPL-2.0 MIT"
 SLOT="0"
