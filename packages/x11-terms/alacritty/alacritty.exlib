@@ -27,6 +27,8 @@ SLOT="0"
 BUGS_TO="uniminin@zoho.com"
 
 MYOPTIONS="
+    man  [[ description = [ Installs manpage ] ]]
+    doc
     ( X wayland ) [[ number-selected = at-least-one ]]
 "
 
@@ -66,5 +68,8 @@ alacritty_src_install() {
 
     insinto /usr/share/pixmaps
     newins extra/logo/${PN}-term.svg Alacritty.svg
+
+    ! option man || echo "HAHAHA"
+    ! option doc || echo "HAHAHA"
 }
 
