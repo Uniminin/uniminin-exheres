@@ -16,7 +16,7 @@ GUSER="${PN}-shell"
 GARC="releases/download"
 ARC_FORMAT="tar.xz"
 HOMEPAGE="${PROTOCOL}${GHOST}.${GDOM}/${GUSER}/${PN}-shell"
-DOWNLOADS="${HOMEPAGE}/${GARC}/${PV}/${PVN}.${ARC_FORMAT}"
+DOWNLOADS="${HOMEPAGE}/${GARC}/${PV}/${PN}-${PV}.${ARC_FORMAT}"
 
 OFFICIAL_SITE="${PROTOCOL}${PN}shell.${GDOM}"
 UPSTREAM_DOCUMENTATION="${OFFICIAL_SITE}/docs/current/index.html"
