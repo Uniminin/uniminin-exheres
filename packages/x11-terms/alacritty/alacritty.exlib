@@ -34,6 +34,9 @@ DEPENDENCIES="
         media-libs/freetype
         X? (
             x11-dri/mesa[X]
+            x11-libs/libXrandr
+            x11-libs/libXi
+            x11-libs/libXcursor
         )
         wayland? (
             x11-dri/mesa[wayland]
