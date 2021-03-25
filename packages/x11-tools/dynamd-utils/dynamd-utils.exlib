@@ -1,0 +1,60 @@
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="User defined utilities for the dynamd window manager"
+DESCRIPTION="
+dynamd-utils contains all the user defined utilities for the dynamd window manager.
+"
+
+HOMEPAGE="N/A"
+
+UPSTREAM_DOCUMENTATION="N/A"
+UPSTREAM_CHANGELOG="N/A"
+
+LICENCES="MIT"
+SLOT="0"
+
+BUGS_TO="uniminin@zoho.com"
+
+MYOPTIONS="
+    xrandr    [[ description = [ Installs xrandr ] ]]
+    xset      [[ description = [ Installs xset ] ]]
+    xsetroot  [[ description = [ Installs xsetroot ] ]]
+    wmname    [[ description = [ Installs wmname ] ]]
+    alacritty [[ description = [ Installs alacritty ] ]]
+    dmenu     [[ description = [ Installs dmenu ] ]]
+    feh       [[ description = [ Installs feh ] ]]
+    picom     [[ description = [ Installs picom ] ]]
+"
+
+custom_repo="uniminin"
+
+DEPENDENCIES="
+    run:
+        xrandr? (
+            x11-apps/xrandr
+        )
+        xset? (
+            x11-apps/xset
+        )
+        xsetroot? (
+            x11-apps/xsetroot
+        )
+        wmname? (
+            x11-apps/wmname
+        )
+        alacritty? (
+            x11-terms/alacritty::${custom_repo}
+        )
+        dmenu? (
+            x11-misc/dmenu::${custom_repo}
+        )
+        feh? (
+            media-gfx/feh::${custom_repo}
+        )
+        picom? (
+            x11-misc/picom::${custom_repo}
+        )
+"
+
+RESTRICT="test"
