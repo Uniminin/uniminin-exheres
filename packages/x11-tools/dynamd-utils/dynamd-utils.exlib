@@ -29,11 +29,11 @@ MYOPTIONS="
     zstd      [[ description = [ Adds support for zstd compression ] ]]
 "
 
-custom_repo="uniminin"
+#custom_repo="uniminin"
 
 DEPENDENCIES="
     run:
-        X (
+        X? (
             x11-server/xorg-server
             x11-dri/mesa[X]
             x11-drivers/xf86-input-libinput
@@ -51,16 +51,16 @@ DEPENDENCIES="
                 x11-apps/wmname
             )
             alacritty? (
-                x11-terms/alacritty::${custom_repo}
+                x11-terms/alacritty#::${custom_repo}
             )
             dmenu? (
-                x11-misc/dmenu::${custom_repo}
+                x11-misc/dmenu#::${custom_repo}
             )
             feh? (
-                media-gfx/feh::${custom_repo}
+                media-gfx/feh#::${custom_repo}
             )
             picom? (
-                x11-misc/picom::${custom_repo}
+                x11-misc/picom#::${custom_repo}
             )
         ) [[ *requires = X ]]
 
