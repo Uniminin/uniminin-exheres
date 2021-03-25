@@ -26,6 +26,7 @@ MYOPTIONS="
     feh       [[ description = [ Installs feh ] ]]
     picom     [[ description = [ Installs picom ] ]]
     doas      [[ description = [ Installs doas ] ]]
+    dhcpcd    [[ description = [ Installs dhcpcd ] ]]
     zstd      [[ description = [ Adds support for zstd compression ] ]]
 "
 
@@ -64,6 +65,9 @@ DEPENDENCIES="
 
         doas? (
             app-admin/doas
+        )
+        dhcpcd? (
+            net-misc/dhcpcd
         )
         zstd? (
             app-arch/zstd
