@@ -4,4 +4,3 @@
 require alacritty
 
 PLATFORMS="~amd64 ~x86"
-

@@ -93,4 +93,3 @@ alacritty_src_install() {
     ! option zsh-completion || bash-completion_src_install
     ! option fish-completion || fish-completion_src_install
 }
-
