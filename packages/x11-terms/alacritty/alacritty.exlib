@@ -61,15 +61,14 @@ ECARGO_FEATURE_ENABLES=(
 
 alacritty_src_install() {
     edo cd "${ALACRITTY_ROOT}"
-    dobin target/release/${PN}
-
-    insinto /usr/share/applications
-    doins extra/linux/Alacritty.desktop
-
-    insinto /usr/share/pixmaps
-    newins extra/logo/${PN}-term.svg Alacritty.svg
-
     ! option man || echo "HAHAHA"
     ! option doc || echo "HAHAHA"
+    #dobin target/release/${PN}
+
+    #insinto /usr/share/applications
+    #doins extra/linux/Alacritty.desktop
+
+    #insinto /usr/share/pixmaps
+    #newins extra/logo/${PN}-term.svg Alacritty.svg
 }
 
