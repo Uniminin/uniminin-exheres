@@ -41,12 +41,10 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    ## FIXME: Execute the following commented command if xinerama option is disabled
-    # edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
-    #    -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
-    #    -i config.mk
-
-    option_enable xinerama echo hi
+    option_without xinerama \
+            edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
+                    -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
+                    -i config.mk
 
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
             -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
