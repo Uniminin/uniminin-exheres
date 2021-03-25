@@ -29,8 +29,6 @@ MYOPTIONS="
     zstd      [[ description = [ Adds support for zstd compression ] ]]
 "
 
-#custom_repo="uniminin"
-
 DEPENDENCIES="
     run:
         X? (
@@ -51,16 +49,16 @@ DEPENDENCIES="
                 x11-apps/wmname
             )
             alacritty? (
-                x11-terms/alacritty#::${custom_repo}
+                x11-terms/alacritty
             )
             dmenu? (
-                x11-misc/dmenu#::${custom_repo}
+                x11-misc/dmenu
             )
             feh? (
-                media-gfx/feh#::${custom_repo}
+                media-gfx/feh
             )
             picom? (
-                x11-misc/picom#::${custom_repo}
+                x11-misc/picom
             )
         ) [[ *requires = X ]]
 
