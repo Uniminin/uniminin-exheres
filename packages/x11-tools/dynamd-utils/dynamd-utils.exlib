@@ -33,6 +33,7 @@ MYOPTIONS="
     picom      [[ description = [ Installs picom ] ]]
     alsa       [[ description = [ Installs Alsa Library ] ]]
     pulseaudio [[ description = [ Installs PulseAudio sound server ] ]]
+    ffmpeg     [[ description = [ Installs ffmpeg ] ]]
 "
 
 DEPENDENCIES="
@@ -90,7 +91,10 @@ DEPENDENCIES="
         )
         pulseaudio? (
             media-sound/pulseaudio
-        ) 
+        )
+        ffmpeg? (
+            media/ffmpeg
+        )
 "
 
 RESTRICT="test"
