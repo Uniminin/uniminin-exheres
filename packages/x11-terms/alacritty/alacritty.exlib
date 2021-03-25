@@ -3,7 +3,8 @@
 # Copyright 2021 Angel Uniminin <uniminin@zoho.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require cargo [ disable_default_features=true rust_minimum_version=1.50.0 ]
+require cargo [ disable_default_features=true rust_minimum_version=1.50.0 ] \
+        bash-completion zsh-completion fish-completion
 
 export_exlib_phases src_install
 
@@ -27,9 +28,12 @@ SLOT="0"
 BUGS_TO="uniminin@zoho.com"
 
 MYOPTIONS="
+    ( X wayland ) [[ number-selected = at-least-one ]]
     man  [[ description = [ Installs manpage ] ]]
     doc  [[ description = [ Installs documentation ] ]]
-    ( X wayland ) [[ number-selected = at-least-one ]]
+    bash-completion [ Installs completion files for the bash shell ] ]]
+    zsh-completion  [ Installs completion files for the zsh shell ] ]]
+    fish-completion [ Installs completion files for the fish shell ] ]]
 "
 
 DEPENDENCIES="
@@ -59,16 +63,25 @@ ECARGO_FEATURE_ENABLES=(
     "wayland"
 )
 
+BASH_COMPLETIONS=( extra/completions/${PN}.bash )
+ZSH_COMPLETIONS=( extra/completions/_${PN} )
+FISH_COMPLETIONS=( extra/completions/${PN}.fish )
+
 alacritty_src_install() {
     edo cd "${ALACRITTY_ROOT}"
-    ! option man || echo "HAHAHA"
-    ! option doc || echo "HAHAHA"
-    #dobin target/release/${PN}
+    dobin target/release/${PN}
 
-    #insinto /usr/share/applications
-    #doins extra/linux/Alacritty.desktop
+    insinto /usr/share/applications
+    doins extra/linux/Alacritty.desktop
 
-    #insinto /usr/share/pixmaps
-    #newins extra/logo/${PN}-term.svg Alacritty.svg
+    insinto /usr/share/pixmaps
+    newins extra/logo/${PN}-term.svg Alacritty.svg
+
+    ! option man || insinto /usr/share/man/man1 ; newins extra/${PN}.man ${PN}.1
+    ! option doc || emagicdocs
+
+    ! option bash-completion || zsh-completion_src_install
+    ! option zsh-completion || bash-completion_src_install
+    ! option fish-completion || fish-completion_src_install
 }
 
