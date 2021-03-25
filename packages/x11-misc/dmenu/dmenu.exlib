@@ -41,7 +41,7 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    ### TODO: Handle Properly [!-xinerama]
+    ## FIXME: Execute the following commented command if xinerama option is disabled
     # edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
     #    -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
     #    -i config.mk
