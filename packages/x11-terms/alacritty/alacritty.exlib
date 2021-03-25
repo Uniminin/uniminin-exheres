@@ -62,7 +62,7 @@ DEPENDENCIES="
         sys-libs/ncurses
 "
 
-BUGS_TO="uniminin@zoho.com"
+RESTRICT="test"
 
 ALACRITTY_ROOT="${WORK}"
 WORK="${WORK}/${PN}"

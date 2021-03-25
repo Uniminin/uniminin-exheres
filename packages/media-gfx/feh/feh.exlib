@@ -60,20 +60,20 @@ RESTRICT="test"
 
 DEFAULT_SRC_INSTALL_PARAMS=(
     DESTDIR="${IMAGE}"
-    PREFIX=/usr
-    bin_dir="${IMAGE}"/usr/$(exhost --target)/bin
+    PREFIX="/usr"
+    bin_dir="${IMAGE}/usr/$(exhost --target)/bin"
 )
 
 state() { 
-    echo ${1}=$(option ${1} 1 0)
+    echo "${1}"="$(option ${1} 1 0)"
 }
 
 src_compile() {
     emake PREFIX=/usr \
-        $(state curl) \
-        $(state exif) \
-        $(state inotify) \
-        $(state xinerama)
+        "$(state curl)" \
+        "$(state exif)" \
+        "$(state inotify)" \
+        "$(state xinerama)"
 }
 
 pkg_postinst() {
