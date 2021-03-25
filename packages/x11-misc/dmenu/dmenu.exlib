@@ -9,13 +9,14 @@ DESCRIPTION="
 dmenu is a dynamic menu for X, originally designed for dwm. It manages large numbers of user-defined menu items efficiently.
 "
 
+PROTOCOL="https://"
 OFFICIAL_DOMAIN="suckless.org"
 OFFICIAL_DOMAIN_MISC="tools"
-HOMEPAGE="https://${OFFICIAL_DOMAIN_MISC}.${OFFICIAL_DOMAIN}/${PN}"
-DOWNLOADS="https://dl.${OFFICIAL_DOMAIN}/${OFFICIAL_DOMAIN_MISC}/${PNV}.tar.gz"
+HOMEPAGE="${PROTOCOL}${OFFICIAL_DOMAIN_MISC}.${OFFICIAL_DOMAIN}/${PN}"
+DOWNLOADS="${PROTOCOL}dl.${OFFICIAL_DOMAIN}/${OFFICIAL_DOMAIN_MISC}/${PNV}.tar.gz"
 
-UPSTREAM_DOCUMENTATION="https://git.${OFFICIAL_DOMAIN}/${PN}/file/${PN}.1.html"
-UPSTREAM_CHANGELOG="https://git.${OFFICIAL_DOMAIN}/${PN}/log.html"
+UPSTREAM_DOCUMENTATION="${PROTOCOL}git.${OFFICIAL_DOMAIN}/${PN}/file/${PN}.1.html"
+UPSTREAM_CHANGELOG="${PROTOCOL}git.${OFFICIAL_DOMAIN}/${PN}/log.html"
 
 LICENCES="MIT"
 SLOT="0"

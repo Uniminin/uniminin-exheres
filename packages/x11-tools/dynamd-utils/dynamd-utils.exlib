@@ -22,8 +22,8 @@ MYOPTIONS="
     dbus       [[ description = [ Installs dbus ] ]]
     doas       [[ description = [ Installs doas ] ]]
     dhcpcd     [[ description = [ Installs dhcpcd ] ]]
-    fish       
-    zstd       [[ description = [ Adds support for zstd compression ] ]]
+    fish       [[ description = [ Installs the fish shell ] ]]
+    zstd       [[ description = [ Installs zstd ] ]]
     xset       [[ description = [ Installs xset ] ]]
     xsetroot   [[ description = [ Installs xsetroot ] ]]
     wmname     [[ description = [ Installs wmname ] ]]
@@ -31,8 +31,8 @@ MYOPTIONS="
     dmenu      [[ description = [ Installs dmenu ] ]]
     feh        [[ description = [ Installs feh ] ]]
     picom      [[ description = [ Installs picom ] ]]
-    alsa       [[ description = [ Adds support for ALSA (Advanced Linux Sound Architecture) ] ]]
-    pulseaudio [[ description = [ Adds support for PulseAudio sound server ] ]]
+    alsa       [[ description = [ Installs Alsa Library ] ]]
+    pulseaudio [[ description = [ Installs PulseAudio sound server ] ]]
 "
 
 DEPENDENCIES="

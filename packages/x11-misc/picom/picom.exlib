@@ -10,11 +10,13 @@ DESCRIPTION="
 picom is a standalone compositor for Xorg, suitable for use with window managers that do not provide compositing. picom is a fork of compton, which is a fork of xcompmgr-dana, which in turn is a fork of xcompmgr.
 "
 
+PROTOCOL="https://"
 GHOST="github"
 GDOM="com"
 GUSER="yshui"
-HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
-DOWNLOADS="${HOMEPAGE}/archive/refs/tags/v${PV}.tar.gz"
+GARC="archive/refs/tags"
+HOMEPAGE="${PROTOCOL}${GHOST}.${GDOM}/${GUSER}/${PN}"
+DOWNLOADS="${HOMEPAGE}/${GARC}/v${PV}.tar.gz"
 
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/blob/next/man/${PN}.1.asciidoc"
 UPSTREAM_CHANGELOG="${HOMEPAGE}/releases"

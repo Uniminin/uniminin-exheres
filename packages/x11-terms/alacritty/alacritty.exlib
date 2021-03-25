@@ -13,11 +13,13 @@ DESCRIPTION="
 Alacritty is a modern cross-platform, OpenGL terminal emulator which allows extensive configuration.
 "
 
+PROTOCOL="https://"
 GHOST="github"
 GDOM="com"
 GUSER="${PN}"
-HOMEPAGE="https://${GHOST}.${GDOM}/${GUSER}/${PN}"
-DOWNLOADS="${HOMEPAGE}/archive/refs/tags/v${PV}.tar.gz"
+GARC="archive/refs/tags"
+HOMEPAGE="${PROTOCOL}${GHOST}.${GDOM}/${GUSER}/${PN}"
+DOWNLOADS="${HOMEPAGE}/${GARC}/v${PV}.tar.gz"
 
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/tree/master/docs"
 UPSTREAM_CHANGELOG="${HOMEPAGE}/blob/master/CHANGELOG.md"

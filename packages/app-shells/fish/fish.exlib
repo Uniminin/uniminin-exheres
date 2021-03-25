@@ -1,0 +1,50 @@
+# Copyright 2014 Saleem Abdulrasool <compnerd@compnerd.org>
+# Copyright 2021 Angel Uniminin <uniminin@zoho.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake
+
+SUMMARY="The user-friendly command line shell"
+DESCRIPTION="
+Alacritty is a modern cross-platform, OpenGL terminal emulator which allows extensive configuration.
+"
+
+PROTOCOL="https://"
+GHOST="github"
+GDOM="com"
+GUSER="${PN}-shell"
+GARC="archive/refs/tags"
+HOMEPAGE="${PROTOCOL}${GHOST}.${GDOM}/${GUSER}/${PN}-shell"
+DOWNLOADS="${HOMEPAGE}/${GARC}/${PV}.tar.gz"
+
+OFFICIAL_SITE="${PROTOCOL}${PN}shell.${GDOM}"
+UPSTREAM_DOCUMENTATION="${OFFICIAL_SITE}/docs/current/index.html"
+UPSTREAM_CHANGELOG="${HOMEPAGE}/blob/master/CHANGELOG.rst"
+
+LICENCES="GPL-2"
+SLOT="0"
+
+MYOPTIONS="
+    doc  [[ description = [ Installs documentation ] ]]
+"
+
+DEPENDENCIES="
+    build:
+        doc? ( app-doc/doxygen )
+        sys-devel/gettext
+    build+run:
+        dev-libs/pcre2
+        sys-libs/ncurses
+"
+
+CMAKE_SRC_CONFIGURE_PARAMS=(
+    -DCMAKE_INSTALL_SYSCONFDIR=/etc
+    -DCMAKE_INSTALL_DATAROOTDIR=/usr/share
+    -DSHARE_INSTALL_DIR=/usr/share
+)
+
+src_install() {
+    default
+    keepdir /etc/fish/{completions,conf.d,functions}
+    keepdir /usr/share/fish/vendor_{conf,completions,functions}.d
+}
