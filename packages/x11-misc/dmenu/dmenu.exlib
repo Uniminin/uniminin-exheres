@@ -41,7 +41,7 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    [ optionq xinerama ] || edo sed \
+    [ option xinerama ] || edo sed \
         -e "s:XINERAMALIBS:#XINERAMALIBS:g" \
         -e "s:XINERAMAFLAGS:#XINERAMAFLAGS:g" \
         -i config.mk
