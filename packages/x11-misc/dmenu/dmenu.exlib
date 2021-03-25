@@ -41,10 +41,15 @@ DEPENDENCIES="
 "
 
 src_prepare() {
-    option_without xinerama \
-            edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
-                    -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
-                    -i config.mk
+    #edo sed -e "s/XINERAMALIBS/#XINERAMALIBS/g" \
+    #        -e "s/XINERAMAFLAGS/#XINERAMAFLAGS/g" \
+    #        -i config.mk
+
+    if optionq xinerama ; then
+        echo "XINERAMA ENABLED"
+    else
+        echo "XINERAMA DISABLED"
+    fi
 
     edo sed -e "s:PREFIX = /usr/local:PREFIX = /usr/$(exhost --target):" \
             -e "s:MANPREFIX = \${PREFIX}/share/man:MANPREFIX = /usr/share/man:" \
