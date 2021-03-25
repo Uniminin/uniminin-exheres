@@ -31,9 +31,9 @@ MYOPTIONS="
     ( X wayland ) [[ number-selected = at-least-one ]]
     man  [[ description = [ Installs manpage ] ]]
     doc  [[ description = [ Installs documentation ] ]]
-    bash-completion [ Installs completion files for the bash shell ] ]]
-    zsh-completion  [ Installs completion files for the zsh shell ] ]]
-    fish-completion [ Installs completion files for the fish shell ] ]]
+    bash-completion [[ description = [ Installs completion files for the bash shell ] ]]
+    zsh-completion  [[ description = [ Installs completion files for the zsh shell ] ]]
+    fish-completion [[ description = [ Installs completion files for the fish shell ] ]]
 "
 
 DEPENDENCIES="

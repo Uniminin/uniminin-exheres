@@ -5,7 +5,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 MYOPTIONS="
-    fish-completion [ Installs completion files for the fish shell ] ]]
+    fish-completion [[ description = [ Installs completion files for the fish shell ] ]]
 "
 
 BUGS_TO="uniminin@zoho.com"
