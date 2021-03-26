@@ -41,7 +41,8 @@ MYOPTIONS="
 
 DEPENDENCIES="
     build+run:
-        media-libs/{fontconfig,freetype:2}
+        media-libs/fontconfig
+        media-libs/freetype:2
         bash-completion? (
             app-shells/bash
         )
@@ -53,7 +54,9 @@ DEPENDENCIES="
         )
         X? (
             x11-dri/mesa[X]
-            x11-libs/{libXrandr,libXi,libXcursor}
+            x11-libs/libXrandr
+            x11-libs/libXi
+            x11-libs/libXcursor
         )
         wayland? (
             x11-dri/mesa[wayland]

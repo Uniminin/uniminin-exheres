@@ -41,7 +41,8 @@ DEPENDENCIES="
     build:
         x11-libs/libXt
     build+run:
-        media-libs/{libpng,imlib2[X]}
+        media-libs/libpng
+        media-libs/imlib2[X]
         x11-libs/libX11
         curl? (
             net-misc/curl

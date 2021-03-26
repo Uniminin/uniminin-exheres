@@ -33,8 +33,10 @@ DEPENDENCIES="
         virtual/pkg-config
         x11-proto/xorgproto
     build+run:
-        media-libs/{fontconfig,freetype:2}
-        x11-libs/{libX11,libXft}
+        media-libs/fontconfig
+        media-libs/freetype:2
+        x11-libs/libX11
+        x11-libs/libXft
         xinerama? (
             x11-libs/libXinerama
         )
