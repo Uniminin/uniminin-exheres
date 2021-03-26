@@ -43,7 +43,6 @@ DEPENDENCIES="
             x11-dri/mesa[X]
             x11-drivers/xf86-input-libinput
             x11-apps/xinit
-            x11-apps/xrandr
         )
         systemd? (
             sys-apps/systemd
