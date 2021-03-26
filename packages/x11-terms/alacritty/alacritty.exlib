@@ -87,9 +87,9 @@ alacritty_src_install() {
     doins "extra/linux/Alacritty.desktop"
 
     insinto "/usr/share/pixmaps"
-    newins "extra/logo/${PN}-term.svg Alacritty.svg"
+    newins "extra/logo/${PN}-term.svg" "Alacritty.svg"
 
-    ! option man || insinto "/usr/share/man/man1" ; newins "extra/${PN}.man ${PN}.1"
+    ! option man || insinto "/usr/share/man/man1" ; newins "extra/${PN}.man" "${PN}.1"
     ! option doc || emagicdocs
 
     ! option bash-completion || zsh-completion_src_install
