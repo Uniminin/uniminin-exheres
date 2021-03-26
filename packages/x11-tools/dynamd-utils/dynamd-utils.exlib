@@ -17,7 +17,7 @@ SLOT="0"
 BUGS_TO="uniminin@zoho.com"
 
 MYOPTIONS="
-    X          [[ description = [ Installs Xorg with drivers, libs and WM runtime tools ] ]]
+    X          [[ description = [ Installs Xorg with Drivers, Libs and WM runtime tools ] ]]
     systemd    [[ description = [ Installs systemd ] ]]
     dbus       [[ description = [ Installs dbus ] ]]
     doas       [[ description = [ Installs doas ] ]]
@@ -32,7 +32,7 @@ MYOPTIONS="
     feh        [[ description = [ Installs feh ] ]]
     picom      [[ description = [ Installs picom ] ]]
     alsa       [[ description = [ Installs Alsa Library ] ]]
-    pulseaudio [[ description = [ Installs PulseAudio sound server ] ]]
+    pulseaudio [[ description = [ Installs PulseAudio Sound Server ] ]]
     ffmpeg     [[ description = [ Installs ffmpeg ] ]]
 "
 
@@ -90,6 +90,7 @@ DEPENDENCIES="
         )
         pulseaudio? (
             media-sound/pulseaudio
+            media-sound/pavucontrol
         )
         ffmpeg? (
             media/ffmpeg
