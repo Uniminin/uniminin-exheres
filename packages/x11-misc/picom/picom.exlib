@@ -38,23 +38,14 @@ DEPENDENCIES="
         dev-libs/uthash
         x11-proto/xorgproto
     build+run:
-        dev-libs/libconfig
-        dev-libs/libev
-        dev-libs/pcre
-        x11-libs/libX11
-        x11-libs/libxcb
-        x11-libs/libXext
-        x11-libs/pixman:1
-        x11-libs/libxdg-basedir
-        x11-utils/xcb-util-renderutil
-        x11-utils/xcb-util-image
+        dev-libs/{libconfig,libev,pcre}
+        x11-libs/{libX11,libxcb,libXext,pixman:1,libxdg-basedir}
+        x11-utils/{xcb-util-renderutil,xcb-util-image}
         opengl? (
-            x11-dri/libdrm
-            x11-dri/mesa
+            x11-dri/{mesa,libdrm}
         )
     run:
-        x11-apps/xprop
-        x11-apps/xwininfo
+        x11-apps/{xprop,xwininfo}
 "
 
 RESTRICT="test"
