@@ -34,6 +34,7 @@ MYOPTIONS="
     alsa       [[ description = [ Installs Alsa Library, Configurations, Plugins & Utilities ] ]]
     pulseaudio [[ description = [ Installs PulseAudio Sound Server ] ]]
     ffmpeg     [[ description = [ Installs ffmpeg ] ]]
+    python     [[ description = [ Installs python with pip ] ]]
 "
 
 DEPENDENCIES="
@@ -97,6 +98,10 @@ DEPENDENCIES="
         )
         ffmpeg? (
             media/ffmpeg
+        )
+        python? (
+            dev-lang/python
+            dev-python/pip
         )
 "
 
