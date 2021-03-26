@@ -31,7 +31,7 @@ MYOPTIONS="
     dmenu      [[ description = [ Installs dmenu ] ]]
     feh        [[ description = [ Installs feh ] ]]
     picom      [[ description = [ Installs picom ] ]]
-    alsa       [[ description = [ Installs Alsa Library ] ]]
+    alsa       [[ description = [ Installs Alsa Library, Configurations, Plugins & Utilities ] ]]
     pulseaudio [[ description = [ Installs PulseAudio Sound Server ] ]]
     ffmpeg     [[ description = [ Installs ffmpeg ] ]]
 "
@@ -87,10 +87,13 @@ DEPENDENCIES="
         ) [[ *requires = X ]]
         alsa? (
             sys-sound/alsa-lib
+            sys-sound/alsa-topology-conf
+            sys-sound/alsa-ucm-conf
+            sys-sound/alsa-plugins
+            sys-sound/alsa-utils
         )
         pulseaudio? (
             media-sound/pulseaudio
-            media-sound/pavucontrol
         )
         ffmpeg? (
             media/ffmpeg
