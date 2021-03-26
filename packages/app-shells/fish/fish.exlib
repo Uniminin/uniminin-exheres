@@ -41,13 +41,13 @@ DEPENDENCIES="
 "
 
 CMAKE_SRC_CONFIGURE_PARAMS=(
-    -DCMAKE_INSTALL_SYSCONFDIR=/etc
-    -DCMAKE_INSTALL_DATAROOTDIR=/usr/share
-    -DSHARE_INSTALL_DIR=/usr/share
+    "-DCMAKE_INSTALL_SYSCONFDIR=/etc"
+    "-DCMAKE_INSTALL_DATAROOTDIR=/usr/share"
+    "-DSHARE_INSTALL_DIR=/usr/share"
 )
 
 src_install() {
     default
-    keepdir "/etc/fish/{completions,conf.d,functions}"
-    keepdir "/usr/share/fish/vendor_{conf,completions,functions}.d"
+    keepdir /etc/fish/{completions,conf.d,functions}
+    keepdir /usr/share/fish/vendor_{conf,completions,functions}.d
 }
